@@ -13,7 +13,7 @@
 * Create new project using this template 
  
   ```
-  middleman init my-project --template=tyom/middleman-webpack
+  middleman init my-project --template=tyom/middleman-webpack#mojular
   ```
 * Install NPM packages 
 

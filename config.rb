@@ -21,6 +21,8 @@ activate :external_pipeline,
    command: build? ? 'npm run build' : 'npm start',
    source: '.tmp/dist'
 
+set :layout, 'base'
+
 # General configuration
 
 ###
@@ -43,5 +45,5 @@ end
 
 # Ignore stylesheets & JS as they are handled by external pipeline
 ignore /stylesheets\/(?!.*\.css)/
-ignore /javascripts\/(?!bundle\.js)/
+ignore /javascripts\/(?!app\.bundle\.js)/
 

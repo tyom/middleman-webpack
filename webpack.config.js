@@ -9,7 +9,7 @@ module.exports = {
 
   output: {
     path: __dirname + '/.tmp/dist',
-    filename: 'javascripts/bundle.js'
+    filename: 'javascripts/app.bundle.js'
   },
 
   module: {

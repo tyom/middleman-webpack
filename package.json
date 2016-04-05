@@ -26,5 +26,8 @@
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "mojular-govuk-elements": "github:mojular/govuk-elements"
   }
 }
