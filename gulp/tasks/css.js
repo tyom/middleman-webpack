@@ -6,10 +6,14 @@ const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').get('bs-proxy');
 const paths = require('../paths');
 
+const SASS_PATHS = [];
+
 gulp.task('css', ['clean:css'], () => {
   return gulp.src(`${paths.sourceStyles}/index.scss`)
     .pipe(sourcemaps.init())
-    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: SASS_PATHS
+    }).on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['> 1%', 'last 2 versions', 'IE 9']
     }))
