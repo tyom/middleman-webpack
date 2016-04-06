@@ -6,7 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').get('bs-proxy');
 const paths = require('../paths');
 
-gulp.task('css', () => {
+gulp.task('css', ['clean:css'], () => {
   return gulp.src(`${paths.sourceStyles}/index.scss`)
     .pipe(sourcemaps.init())
     .pipe(sass.sync().on('error', sass.logError))
