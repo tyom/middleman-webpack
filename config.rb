@@ -38,6 +38,10 @@ activate :external_pipeline,
 configure :build do
   activate :relative_assets
 
-  # Ignore CSS & JS as they are handled by external pipeline
-  ignore { |path| path =~ /(javascripts|stylesheets)\/(.*)$/ && !$2.match(/bundle\.(css|js)/) }
+  ignore '*.map' # Remove .map files from build
 end
+
+# Ignore stylesheets & JS as they are handled by external pipeline
+ignore /stylesheets\/(?!.*\.css)/
+ignore /javascripts\/(?!bundle\.js)/
+
