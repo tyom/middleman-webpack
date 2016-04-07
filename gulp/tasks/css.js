@@ -8,7 +8,7 @@ const paths = require('../paths');
 
 const SASS_PATHS = [];
 
-gulp.task('css', ['clean:css'], () => {
+gulp.task('css', () => {
   return gulp.src(`${paths.sourceStyles}/index.scss`)
     .pipe(sourcemaps.init())
     .pipe(sass({
