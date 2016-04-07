@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
+const importOnce = require('node-sass-import-once');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').get('bs-proxy');
@@ -12,6 +13,7 @@ gulp.task('css', () => {
   return gulp.src(`${paths.sourceStyles}/index.scss`)
     .pipe(sourcemaps.init())
     .pipe(sass({
+      importer: importOnce,
       includePaths: SASS_PATHS
     }).on('error', sass.logError))
     .pipe(autoprefixer({
